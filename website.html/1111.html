@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Green Across Time Museum</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body {
+    font-family: "Georgia", serif;
+    margin: 0;
+    background: #f7f5f0;
+    color: #1f2a1f;
+    line-height: 1.7;
+}
+
+header {
+    background: #1f3a2e;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: white;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 16px;
+    opacity: 0.9;
+    color: white;
+}
+
+.language-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.language {
+    border: 1px solid white;
+    width: 30px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding: 2px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.highlight {
+    background: #e6f4ea;
+    padding: 10px;
+    border-left: 5px solid #2e4a3b;
+    margin-top: 15px;
+}
+
+.navbar {
+    background-color: #1f3a2e;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #2e4a3b;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #1f3a2e;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2e4a3b;
+}
+
+.btn-outline {
+    border: 2px solid #1f3a2e;
+    color: #1f3a2e;
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: #2e4a3b;
+    color: white;
+}
+
+.btn-light {
+    background-color: #f4f4f4;
+    color: #1f2a1f;
+}
+
+.btn-light:hover {
+    background-color: #e6e6e6;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f3a2e;
+    color: white;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="language-toggle">
+        <div class="language">en</div>
+        <div class="language">jp</div>
+    </div>
+
+    <h1>Green Across Time Museum</h1>
+    <p>San Francisco - California, United States</p>
+</header>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="3333.html">Collection</a>
+    <a href="experience.html">Japan’s Green Tea Experience</a>
+    <a href="contact.html">Contact Us</a>
+</div>
+
+<div class="container">
+
+    <div class="section">
+        <h2>Welcome</h2>
+        <p>
+            Explore the journey of matcha and Japanese tea culture through time.
+        </p>
+
+        <div class="highlight">
+            A museum dedicated to tradition, craftsmanship, and cultural transformation.
+        </div>
+    </div>
+
+</div>
+
+<style>
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    transform: scale(1.5);
+    transition: opacity 1.5s ease-in-out, transform 6s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    color: white;
+    font-family: "Georgia", serif;
+    z-index: 10;
+    max-width: 600px;
+}
+
+.overlay h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+.overlay p {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.slideshow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.05)
+    );
+    z-index: 5;
+    pointer-events: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="slideshow">
+  <img class="slide active" src="https://breakawaymatcha.com/cdn/shop/articles/e7742ab14f59298a7e14e06de68e64a0_5fa1564a-7e3b-4bfe-894b-d68ca671f94c.jpg?v=1561456269" alt="Slide 1">
+  <img class="slide" src="https://www.hetkleinstehuis.nl/img/cms/matcha-bereiding-meester.jpg" alt="Slide 2">
+  <img class="slide" src="https://hotel-chinzanso-tokyo.com/wp/wp-content/uploads/20250704_140-1024x683.jpg.webp" alt="Slide 3">
+
+  <div class="overlay">
+    <h1>Japanese Tea Tradition</h1>
+    <p>Calm. Craft. Matcha heritage.</p>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 4000);
+</script>
+
+<style>
+body {
+  font-family: "Georgia", serif;
+  margin: 0;
+  background: #f7f5f0;
+}
+
+.catalog {
+  max-width: 900px;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.catalog a {
+  flex: 1;
+  min-width: 180px;
+
+  padding: 14px 16px;
+  text-decoration: none;
+
+  color: #1f2a1f;
+  font-size: 15px;
+
+  border: 1px solid #1f3a2e;
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+.catalog a:hover {
+  background: #1f3a2e;
+  color: white;
+}
+
+</style>
+
+<div class="catalog">
+  <a href="#">About Tea</a>
+  <a href="#">History of Tea</a>
+  <a href="#">Benefits of Tea</a>
+  <a href="#">Kinds of Tea</a>
+  <a href="#">Matcha Process</a>
+  <a href="#">Video Collection</a>
+</div>
+
+</body>
+</html>
+
+<style>
+
+body {
+    font-family: "Georgia", serif;
+    margin: 0;
+    background: #f7f5f0;
+    color: #1f2a1f;
+    line-height: 1.7;
+}
+
+h2 {
+    color: #1f3a2e;
+    font-weight: normal;
+}
+
+.section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.highlight {
+    background: #e6f4ea;
+    padding: 12px;
+    border-left: 5px solid #1f3a2e;
+    margin-top: 15px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.catalog {
+    max-width: 900px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.catalog a {
+    flex: 1;
+    min-width: 180px;
+
+    padding: 14px;
+    text-decoration: none;
+
+    border: 1px solid #1f3a2e;
+    border-radius: 6px;
+
+    text-align: center;
+    transition: 0.25s ease;
+
+    color: #1f2a1f;
+    background: #ffffff;
+}
+
+.catalog a:hover {
+    background: #1f3a2e;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #1f3a2e;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2e4a3b;
+}
+
+.btn-outline {
+    border: 2px solid #1f3a2e;
+    color: #1f3a2e;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: #1f3a2e;
+    color: white;
+}
+
+.btn-light {
+    background-color: #f4f4f4;
+    color: #1f2a1f;
+}
+
+.btn-light:hover {
+    background-color: #e6e6e6;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="section">
+
+    <h2>Overview</h2>
+
+    <p>
+        Experience the journey of matcha from tea leaf to cup at the Green Across Time Museum in San Francisco, California.
+        This guided tour includes viewing processing techniques, visiting a tea hut, and making your own bowl of matcha.
+    </p>
+
+    <div class="highlight">
+        Reservation required at least 7 days in advance.
+    </div>
+
+</div>
+
+<div class="section">
+
+    <h2>Tour Details</h2>
+
+    <div class="info-grid">
+        <div class="label">Duration:</div>
+        <div>70–90 minutes</div>
+
+        <div class="label">Location:</div>
+        <div>San Francisco, California</div>
+
+        <div class="label">Days:</div>
+        <div>Mon, Tue, Thu, Fri</div>
+
+        <div class="label">Times:</div>
+        <div>10:00–11:30 / 13:30–15:00</div>
+
+        <div class="label">Capacity:</div>
+        <div>2–10 people</div>
+
+        <div class="label">Cost:</div>
+        <div>$35.00 per Adult, $18.00 per Kid under 18 yrs old</div>
+    </div>
+
+</div>
+
+<div class="section">
+
+    <a href="#" class="btn btn-primary">Reserve Now</a>
+    <a href="#" class="btn btn-outline">Learn More</a>
+    <a href="#" class="btn btn-light">Contact</a>
+
+</div>
+
+</body>
+</html>
+
+<style>
+
+body {
+    font-family: "Georgia", serif;
+    margin: 0;
+    background: #f7f5f0;
+    color: #1f2a1f;
+    line-height: 1.7;
+}
+
+h2 {
+    text-align: center;
+    color: #1f3a2e;
+    font-weight: normal;
+    margin-top: 40px;
+}
+
+.section {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+iframe {
+    flex: 1;
+    height: 400px;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.info-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid #1f3a2e;
+    padding: 20px;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.text {
+    font-family: "Georgia", serif;
+}
+
+.info-box h3 {
+    margin-top: 0;
+    color: #1f3a2e;
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Our Location</h2>
+
+<div class="section">
+
+    <iframe
+        loading="lazy"
+        allowfullscreen
+        src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ciEAeSzMvg1PFpRiz4AEVw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=206.9609&pitch=0&thumbfov=100">
+    </iframe>
+
+    <div class="info-box">
+
+        <h3>Visit Us</h3>
+
+        <div class="text">
+            Green Across Time Museum is located in San Francisco, California.
+            <br><br>
+            Address:<br>
+            2929 Geary Blvd,<br>
+            San Francisco, CA
+            <br><br>
+            We welcome visitors to explore the history and culture of matcha through immersive exhibitions.
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+<footer>
+    Green Across Time Museum © 2026
+</footer>
+
+</body>
+</html>
